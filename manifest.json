@@ -4,7 +4,7 @@
   "name": "Url Saver",
   "action": {
     "default_popup": "index.html",
-    "default_icon": "linkicon.png"
+    "default_icon": "./images/linkicon.png"
   },
   "permissions": ["tabs"]
 }
