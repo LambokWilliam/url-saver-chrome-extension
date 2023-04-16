@@ -27,7 +27,6 @@ deleteBtn.addEventListener('dblclick', function () {
 tabBtn.addEventListener('click', function () {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     urlSaved.push(tabs[0].url);
-    inputEl.value = '';
     localStorage.setItem('urlSaved', JSON.stringify(urlSaved));
     renderApp(urlSaved);
   });
