@@ -8,20 +8,20 @@ const tabBtn = document.querySelector('#tab-btn');
 
 if (urlFromStorage) {
   urlSaved = urlFromStorage;
-  renderLeads(urlSaved);
+  renderApp(urlSaved);
 }
 
 inputBtn.addEventListener('click', function () {
   urlSaved.push('https://' + inputEl.value);
   inputEl.value = '';
   localStorage.setItem('urlSaved', JSON.stringify(urlSaved));
-  renderLeads(urlSaved);
+  renderApp(urlSaved);
 });
 
 deleteBtn.addEventListener('dblclick', function () {
   localStorage.clear();
   urlSaved = [];
-  renderLeads(urlSaved);
+  renderApp(urlSaved);
 });
 
 tabBtn.addEventListener('click', function () {
@@ -29,11 +29,11 @@ tabBtn.addEventListener('click', function () {
     urlSaved.push(tabs[0].url);
     inputEl.value = '';
     localStorage.setItem('urlSaved', JSON.stringify(urlSaved));
-    renderLeads(urlSaved);
+    renderApp(urlSaved);
   });
 });
 
-function renderLeads(url) {
+function renderApp(url) {
   ulEl.innerHTML = '';
   let a;
   let li;
