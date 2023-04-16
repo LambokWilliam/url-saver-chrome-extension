@@ -35,13 +35,7 @@ tabBtn.addEventListener('click', function () {
 
 function renderApp(url) {
   ulEl.innerHTML = '';
-  let a;
-  let li;
-  for (let i = 0; i < url.length; i++) {
-    a = createElementA(url[i]);
-    li = createElementLi(a);
-    ulEl.append(li);
-  }
+  loopElements(url);
 }
 
 function createElementA(link) {
@@ -56,4 +50,14 @@ function createElementLi(childElement) {
   const li = document.createElement('li');
   li.append(childElement);
   return li;
+}
+
+function loopElements(arr) {
+  let a;
+  let li;
+  for (let i = 0; i < arr.length; i++) {
+    a = createElementA(arr[i]);
+    li = createElementLi(a);
+    ulEl.append(li);
+  }
 }
